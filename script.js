@@ -1,7 +1,4 @@
-// Computer choice logic
-// random number 1-3
-// assign rock paper scissors a number
-// output to be rock paper or scissors
+
 
 function compChoice() {
     let num = Math.floor(Math.random()* 3); //output 0 - 2
@@ -14,10 +11,10 @@ function compChoice() {
     }
 }
 
-function myChoice() {
-    let choice = prompt('Rock, paper or scissors?');
-    return choice.toLowerCase()
-}
+// function myChoice() {
+//     let choice = prompt('Rock, paper or scissors?');
+//     return choice.toLowerCase()
+// }
 
 
 

@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(88, 88, 88);
+    font-family: sans-serif;
+}
+
+.header {
+    display: flex;
+    height: 150px;
+    background-color: rgb(88, 88, 88);
+    font-size: 80px;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttondiv {
+    display: flex;
+    height: 200px;
+    margin: 0 30%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.button {
+    display: flex;
+    height: 100px;
+    width: 100px;
+    background-color: rgb(112, 112, 112);
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.scores {
+    height: 70px;
+    display: flex;
+    margin: 50px 30% 0 30%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.human,
+.comp {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.playagain {
+    display: flex;
+    height: 180px;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.playbutton {
+    display: flex;
+    height: 80px;
+    width: 200px;
+    background-color: rgb(112, 112, 112);
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.choices {
+    display: flex;
+    height: 200px;
+    margin: 0 30%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hchoice {
+    display: flex;
+    height: 100px;
+    width: 100px;
+    background-color: rgb(112, 112, 112);
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.cchoice {
+    display: flex;
+    height: 100px;
+    width: 100px;
+    background-color: rgb(112, 112, 112);
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 800;
+}
