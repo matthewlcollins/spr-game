@@ -60,7 +60,16 @@ function playOneRound() {
     document.getElementById("cchoice").textContent = compSelection
 
     if (compScore >= 5 || humanScore >= 5) {
-        console.log('Game Over! Final score - Human: ' + humanScore + ' Computer: ' + compScore);
+        const body = document.querySelector("body")
+        const gameOver = document.createElement("span")
+        gameOver.classList.add("gameover")
+        gameOver.textContent = "Game over! " + result
+        body.appendChild(gameOver)
+        
+        // Disable buttons
+        document.getElementById("rock").disabled = true;
+        document.getElementById("paper").disabled = true;
+        document.getElementById("scissors").disabled = true;
     }
 }
 
@@ -75,6 +84,10 @@ function resetGame() {
     document.getElementById("comp").textContent = "Comp Score = 0";
     document.getElementById("hchoice").textContent = "";
     document.getElementById("cchoice").textContent = "";
+    document.getElementById("rock").disabled = false;
+    document.getElementById("paper").disabled = false;
+    document.getElementById("scissors").disabled = false;
+    document.querySelector(".gameover").remove()
 }
 
 document.querySelector(".playbutton").onclick = resetGame;
