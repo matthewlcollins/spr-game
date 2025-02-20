@@ -93,3 +93,8 @@ function resetGame() {
 document.querySelector(".playbutton").onclick = resetGame;
 myChoice();
 
+// notes
+// originally had a while loop so wasnt waiting for button press to initialize functions
+// got help from claude regarding some functions with dom manipulation
+// reset display built by claude, i wanted page refresh but they reset dom values
+// everything makes sense to me which is good
