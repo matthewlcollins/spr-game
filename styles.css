@@ -35,6 +35,7 @@ body {
     border-radius: 5px;
     font-size: 18px;
     font-weight: 800;
+    border: 2px solid;
 }
 
 .scores {
@@ -101,4 +102,27 @@ body {
     border-radius: 5px;
     font-size: 18px;
     font-weight: 800;
+}
+
+#result {
+    font-size: 30px;
+}
+
+.gameover {
+    position: fixed; /* or absolute */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(112, 112, 112);
+    padding: 20px;
+    border-radius: 5px;
+    font-size: 50px;
+    font-weight: 800;
+    z-index: 10; /* ensures it appears above other elements */
+    height: 300px;
+    width: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }

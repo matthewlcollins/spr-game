@@ -1,3 +1,7 @@
+let humanScore = 0;
+let compScore = 0;
+let result = '';
+let choice = ""
 
 
 function compChoice() {
@@ -11,16 +15,21 @@ function compChoice() {
     }
 }
 
-// function myChoice() {
-//     let choice = prompt('Rock, paper or scissors?');
-//     return choice.toLowerCase()
-// }
-
-
-
-let humanScore = 0;
-let compScore = 0;
-let result = '';
+function myChoice() {
+    document.getElementById("rock").onclick = () => {
+       choice = "rock"
+       playOneRound();
+    }
+    document.getElementById("paper").onclick = () => {
+       choice = "paper"
+       playOneRound();
+    }
+    document.getElementById("scissors").onclick = () => {
+       choice = "scissors"
+       playOneRound();
+    }
+    return choice
+}
 
 function playRound(myChoice, compChoice) {
     if (myChoice == compChoice) {
@@ -40,16 +49,52 @@ function playRound(myChoice, compChoice) {
     }
 };
 
-function playGame() {
-    do {
-        const humanSelection = myChoice();
-        const compSelection = compChoice();
-        result = playRound(humanSelection, compSelection);
-        console.log(humanSelection)
-        console.log(compSelection)
-        console.log(result)
-        console.log('human score is ' + humanScore, 'comp score is ' + compScore)
-    } while (compScore < 5 && humanScore < 5)
-};
+function playOneRound() {
+    const compSelection = compChoice();
+    const result = playRound(choice, compSelection);
+    
+    document.getElementById("result").textContent = result
+    document.getElementById("human").textContent = "Your Score = " + humanScore
+    document.getElementById("comp").textContent = "Comp Score = " + compScore
+    document.getElementById("hchoice").textContent = choice
+    document.getElementById("cchoice").textContent = compSelection
 
-playGame();
+    if (compScore >= 5 || humanScore >= 5) {
+        const body = document.querySelector("body")
+        const gameOver = document.createElement("span")
+        gameOver.classList.add("gameover")
+        gameOver.textContent = "Game over! " + result
+        body.appendChild(gameOver)
+        
+        // Disable buttons
+        document.getElementById("rock").disabled = true;
+        document.getElementById("paper").disabled = true;
+        document.getElementById("scissors").disabled = true;
+    }
+}
+
+function resetGame() {
+    // Reset scores
+    humanScore = 0;
+    compScore = 0;
+    choice = "";
+    
+    // Reset display
+    document.getElementById("human").textContent = "Your Score = 0";
+    document.getElementById("comp").textContent = "Comp Score = 0";
+    document.getElementById("hchoice").textContent = "";
+    document.getElementById("cchoice").textContent = "";
+    document.getElementById("rock").disabled = false;
+    document.getElementById("paper").disabled = false;
+    document.getElementById("scissors").disabled = false;
+    document.querySelector(".gameover").remove()
+}
+
+document.querySelector(".playbutton").onclick = resetGame;
+myChoice();
+
+// notes
+// originally had a while loop so wasnt waiting for button press to initialize functions
+// got help from claude regarding some functions with dom manipulation
+// reset display built by claude, i wanted page refresh but they reset dom values
+// everything makes sense to me which is good
